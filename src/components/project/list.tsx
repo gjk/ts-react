@@ -1,5 +1,5 @@
 import * as React from 'react'
-import '../../assets/scss/hello.scss'
+import '../../assets/scss/list.scss'
 
 import { Pages } from "../public/pages";
 
@@ -8,7 +8,7 @@ export class List extends React.Component {
   render() {
     return (
       <div>
-        <article>
+        <article className="ts-list">
           <section>1</section>
           <section>2</section>
           <section>3</section>

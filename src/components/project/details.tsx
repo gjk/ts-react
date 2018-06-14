@@ -1,5 +1,4 @@
 import * as React from 'react'
-import '../../assets/scss/hello.scss'
 
 export interface ProjectInfo {
   title: string,

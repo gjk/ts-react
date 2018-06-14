@@ -2,14 +2,13 @@ const path = require('path')
 const webpack = require('webpack')
 const CleanWebpackPlugin = require('clean-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
-// const postLoader = require('post-loader')
-// const ExtractTextPlugin = require('extract-text-webpack-plugin')
+const projectRootUrl = path.resolve(__dirname, '../')
 
 const config = {
-  entry: [path.resolve(__dirname, '../src/index.tsx')],
+  entry: projectRootUrl + '/src/index.tsx',
   // context: path.resolve(__dirname, ''),
   output: {
-    path: path.resolve(__dirname, "/dist/"),
+    path: projectRootUrl + "/dist/",
     filename: 'bundle.js'
   },
 
@@ -27,11 +26,14 @@ const config = {
       { enforce: 'pre', test: /\.js$/, use: 'source-map-loader' },
       {
         test: /\.scss$/,
-        use: ['style-loader', 'css-loader', 'sass-loader']
-        // use: ExtractTextPlugin.extract({
-        //   fallback: "style-loader",
-        //   use: ['style-loader', 'css-loader', 'postcss-loader', 'sass-loader']
-        // })
+        use: ['style-loader', 'css-loader', 'sass-loader',
+          {
+            loader: 'sass-resources-loader',
+            options: {
+              resources: projectRootUrl + '/src/assets/scss/style.scss'
+            }
+          }
+        ]
       },
       { test: /\.(png|svg|jpg|gif)$/, use: 'file-loader' },
       { test: /\.(woff|woff2|eot|ttf|otf)$/, use: 'file-loader' }

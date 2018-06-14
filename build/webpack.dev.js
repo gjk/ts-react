@@ -12,7 +12,7 @@ const dev = merge(base, {
     new webpack.NamedModulesPlugin() // 和热更新一起使用，显示模块的相对路径，建议用于开发环境。
   ],
   devServer: {
-    port: 8110, // 不解释
+    port: 8120, // 不解释
     host: '127.0.0.1', // 不解释
     contentBase: './', //
     publicPath: '/',
