@@ -3,8 +3,22 @@ import '../../assets/scss/list.scss'
 
 import { Pages } from "../public/pages";
 
+interface ListModel {
+  id: number,
+  title: string,
+  createTime: Date,
+  description: string
+}
+
 // 类组件
 export class List extends React.Component {
+
+  private getList: Array<ListModel>;
+
+  componentDidMount() {
+
+  }
+
   render() {
     return (
       <div>
