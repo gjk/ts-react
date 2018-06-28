@@ -13,11 +13,11 @@ interface ListModel {
 // 类组件
 export class List extends React.Component {
 
-  private getList: Array<ListModel>;
+  // 挂载时的钩子
+  componentDidMount() {}
 
-  componentDidMount() {
-
-  }
+  // 销毁时的钩子
+  componentWillUnmount() {}
 
   render() {
     return (

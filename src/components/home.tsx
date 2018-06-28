@@ -4,7 +4,7 @@ import * as React from 'react'
 export class Home extends React.Component {
   render() {
     return (
-      <div>
+      <div className="m-auto">
         <div>我是首页噢</div>
         <div>我是banner噢</div>
         <div>我是正文噢-1</div>

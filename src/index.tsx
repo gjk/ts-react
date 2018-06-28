@@ -4,7 +4,7 @@ import {BrowserRouter, StaticRouter, Router, Route, Link} from 'react-router-dom
 
 import { Home } from "./components/home"
 import { List } from "./components/project/list"
-import { Footer } from "./components/public/footer";
+import { Footer } from "./components/public/footer"
 
 ReactDOM.render(
   <BrowserRouter
@@ -13,8 +13,10 @@ ReactDOM.render(
     keyLength={12}
   >
     <div>
-      <Link to="/">Home</Link>
-      <Link to="/list">List</Link>
+      <div className="m-auto">
+        <Link to="/">Home</Link>
+        <Link to="/list">List</Link>
+      </div>
       <Route exact path="/list" component={List} />
       <Route exact path="/" component={Home} />
       <Footer />

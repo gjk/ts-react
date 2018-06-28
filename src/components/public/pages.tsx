@@ -10,7 +10,7 @@ interface PagesProp {
 export class Pages extends React.Component<PagesProp, {}> {
   render() {
     return (
-      <article>
+      <article className="m-auto">
         <section>总页数：{this.props.pageTotal}</section>
         <section>{this.props.current}/{this.props.total}</section>
       </article>

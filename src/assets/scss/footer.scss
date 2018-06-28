@@ -1,4 +1,4 @@
 .footer{
-  width: $px1200;@include textNormal($fc: $cf);background-color: $c0;
+  width: $px1200;margin: 0 auto;@include textNormal($fc: $cf);background-color: $c0;
   div{padding: 10px;}
 }
