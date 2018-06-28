@@ -4,6 +4,7 @@ import {BrowserRouter, StaticRouter, Router, Route, Link} from 'react-router-dom
 
 import { Home } from "./components/home"
 import { List } from "./components/project/list"
+import { Footer } from "./components/public/footer";
 
 ReactDOM.render(
   <BrowserRouter
@@ -16,6 +17,7 @@ ReactDOM.render(
       <Link to="/list">List</Link>
       <Route exact path="/list" component={List} />
       <Route exact path="/" component={Home} />
+      <Footer />
     </div>
   </BrowserRouter>,
   document.getElementById('app')

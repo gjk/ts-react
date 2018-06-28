@@ -5,6 +5,9 @@ const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 
 const dev = merge(base, {
   mode: 'production',
+  // Enable sourcemaps for debuggering webpack's output.
+  // 调试使用source-map
+  devtool: 'cheap-module-source-map',
   optimization: {
     minimize: true,
     minimizer: [

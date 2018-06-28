@@ -7,10 +7,13 @@ const dev = merge(base, {
   plugins: [
     // 热更新
     new webpack.HotModuleReplacementPlugin({
-      multiStep: true // 分两步更新，先编译热点，再编译普通模块
+      // multiStep: true // 分两步更新，先编译热点，再编译普通模块
     }),
     new webpack.NamedModulesPlugin() // 和热更新一起使用，显示模块的相对路径，建议用于开发环境。
   ],
+  // Enable sourcemaps for debuggering webpack's output.
+  // 调试使用source-map
+  devtool: 'source-map',
   devServer: {
     port: 8120, // 不解释
     host: '127.0.0.1', // 不解释
@@ -23,6 +26,7 @@ const dev = merge(base, {
       errors: true,
       warnings: false
     },
+    hot: true,
     quiet: true, // 在终端显示错误信息，可与类似 FriendlyErrorsPlugin 等错误美化插件配合使用
     // publicPath: '/static/', // 变换请求路径，有待验证具体效果。
 

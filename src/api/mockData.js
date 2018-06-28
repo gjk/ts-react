@@ -1,9 +1,5 @@
 import Mock from "mockjs";
 
-const ERROR_CODE = {
-
-};
-
 let errorObj = {
   code: 0,
   msg: 'error message',

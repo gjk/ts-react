@@ -12,9 +12,6 @@ const config = {
     filename: 'bundle.js'
   },
 
-  // Enable sourcemaps for debuggering webpack's output.
-  // 调试使用source-map
-  devtool: 'cheap-module-eval-source-map',
   resolve: {
     // Add '.ts' and '.tsx' as resolvable extensions.
     extensions: ['.ts', '.tsx', '.js', '.json']

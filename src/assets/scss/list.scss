@@ -1,3 +1,7 @@
 .ts-list{
-  section{padding: 15px 0;border-bottom: 1px solid $ce;}
+  width: $px1200;margin: 0 auto;
+  section{
+    padding: 15px 0;border-bottom: 1px solid $ce;
+    &:nth-child(even){background-color: $c9;}
+  }
 }
