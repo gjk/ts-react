@@ -1,5 +1,6 @@
 import * as React from 'react'
 import '../../assets/scss/list.scss'
+import { list as listAjax } from '../../api/axios.js'
 
 import { Pages } from "../public/pages";
 
@@ -12,9 +13,19 @@ interface ListModel {
 
 // 类组件
 export class List extends React.Component {
+  constructor(props: any) {
+    super(props);
+    this.state = {
+      proList:[]
+    };
+  }
 
   // 挂载时的钩子
-  componentDidMount() {}
+  componentDidMount() {
+    this.setState({
+      proList: listAjax
+    });
+  }
 
   // 销毁时的钩子
   componentWillUnmount() {}

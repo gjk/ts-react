@@ -32,7 +32,6 @@ axios.interceptors.response.use(
   error => {
     // 丢失tokenId,跳转登录
     if (error && error.response && error.response.status === 401) {
-      Vue.$user.setUser(null)
       location.href = '/'
     }
     return Promise.reject(error)
