@@ -1,17 +1,15 @@
-import axios from 'axios'
-import qs from 'qs'
+import axios from 'axios';
+import { stringify } from "querystring";
+import { Promise } from "es6-promise";
 
-// axios 配置
 axios.defaults.timeout = 30000
 axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded;charset=UTF-8'
-// 测试地址
-axios.defaults.baseURL = myConfig.BASE_URL
 
 // POST传参序列化
 axios.interceptors.request.use(
   config => {
     if (config.method === 'post') {
-      config.data = qs.stringify(config.data)
+      config.data = stringify(config.data)
     }
     return config
   },
@@ -38,8 +36,8 @@ axios.interceptors.response.use(
   }
 )
 
-export function fetch (url, params) {
-  return new Promise((resolve, reject) => {
+export function fetch(url: string, params: object) {
+  return new Promise((resolve: Function, reject: Function) => {
     axios
       .post(url, params)
       .then(
@@ -56,9 +54,9 @@ export function fetch (url, params) {
   })
 }
 
-export default {
+export class Axios {
   // 列表
-  list (params) {
+  static list(params: object) {
     return fetch('/api/list', params)
   }
 }

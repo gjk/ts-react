@@ -10,7 +10,7 @@ export class Details extends React.Component {
   constructor(id: string) {
     super(id);
     this.id = id;
-    this.state = {}; // 本地状态
+    // this.state = {}; // 本地状态
   }
 
   id: string; // 产品ID

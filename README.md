@@ -24,6 +24,9 @@ a typeScript + react + webpack project
 
     {
         test: /\.scss$/,
+
+        // 此处需要注意：loader 的顺序是从右向左执行，
+        // 即：先 sass-loader 把 scss 编译成 css，再由 css-loader 编译成 css 文件，最后由 style-loader 把 css 插入到 html 中
         use: ['style-loader', 'css-loader', 'sass-loader',
         {
           loader: 'sass-resources-loader', //此处为了公共的sass样式能够全局加载，而不用每个组件都单独引用。
@@ -36,9 +39,9 @@ a typeScript + react + webpack project
 
 #### plugins
 
-`CleanWebpackPlugin`清理文件夹
+`CleanWebpackPlugin` 清理文件夹
 
-`HtmlWebpackPlugin`热更新
+`HtmlWebpackPlugin` 热更新
 
 `ProvidePlugin`...
 

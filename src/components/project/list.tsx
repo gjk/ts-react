@@ -1,29 +1,44 @@
 import * as React from 'react'
 import '../../assets/scss/list.scss'
-import { list as listAjax } from '../../api/axios.js'
-
+import { Axios } from '../../api/axios'
 import { Pages } from "../public/pages";
 
-interface ListModel {
+interface ProjectModel {
   id: number,
   title: string,
   createTime: Date,
   description: string
 }
 
-// 类组件
-export class List extends React.Component {
+export class ProjectSection extends React.Component<ProjectModel, {}> {
   constructor(props: any) {
     super(props);
-    this.state = {
-      proList:[]
-    };
   }
+
+  render() {
+    return (<section>{this.props.id} + {this.props.title} + {this.props.createTime} + {this.props.description}</section>)
+  }
+}
+
+interface ListObject {
+  list: Array<object>
+}
+
+// 类组件
+export class List extends React.Component<ListObject, {}> {
+  constructor(props: any) {
+    super(props);
+  }
+
+  listObject: Array<ProjectSection>
 
   // 挂载时的钩子
   componentDidMount() {
-    this.setState({
-      proList: listAjax
+    Axios.list({}).then((data: object) => {
+      if(data && data.code === 100) {
+        // let listSection = data.list;
+        this.listObject = data.list;
+      }
     });
   }
 
@@ -31,9 +46,15 @@ export class List extends React.Component {
   componentWillUnmount() {}
 
   render() {
+    // let sectionList = (item: Array<ProjectSection>) => {
+    //   return (<ProjectSection id={item.id} title={item.title} createTime={item.createTime} description={item.description}></ProjectSection>)
+    // };
     return (
       <div>
         <article className="ts-list">
+          {/* (this.listObject.map((item: any) => {
+            (<ProjectSection id={item.id} title={item.title} createTime={item.createTime} description={item.description}></ProjectSection>)
+          })) */}
           <section>1</section>
           <section>2</section>
           <section>3</section>

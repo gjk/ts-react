@@ -27,6 +27,8 @@
     "redux": "^4.0.0"
   },
   "devDependencies": {
+    "@types/axios": "^0.14.0",
+    "@types/es6-promise": "^3.3.0",
     "autoprefixer": "^8.5.2",
     "awesome-typescript-loader": "^5.0.0",
     "axios": "^0.18.0",
